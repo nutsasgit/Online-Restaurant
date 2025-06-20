@@ -1,0 +1,108 @@
+.mainContainer{
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+h1{
+    text-align: center;
+    margin-top: 110px;
+}
+.productMainContainer{
+    width: 1200px;
+    //border: 2px solid black;
+    
+}
+.tableTitleContainer{
+    display: flex;
+    height: 40px;
+    border-bottom: 3px solid gray;
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.deleteContainer{
+    width: 50px;
+}
+.productImage{
+    width: 200px;
+    //border-right: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.productTitle{
+    //border-right: 2px solid black;
+    width: 500px;
+
+}
+.quantityDiv{
+    width: 200px;
+   // border-right: 2px solid black;
+}
+.priceDiv{
+    width: 150px;
+   // border-right: 2px solid black;
+}
+.totalDiv{
+    width: 150px;
+    //border-right: 2px solid black;
+}
+
+//productCards
+.productCards{
+    display: flex;
+    border-bottom: 3px solid gray;
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 100px;
+}
+.delete{
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bi-x-lg{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.image{
+    width: 190px;
+    //border-right: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    width: 450px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.quantity{
+    width: 185px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.price{
+    width: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.total{
+    width: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.counter{
+    display: flex;
+    gap: 5px;
+}

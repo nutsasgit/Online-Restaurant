@@ -1,0 +1,34 @@
+<h1>Cart</h1>
+<div class="mainContainer">
+  <div class="productMainContainer">
+    <div class="tableTitleContainer">
+      <div class="deleteContainer"></div>
+      <div class="productImage">Product</div>
+      <div class="productTitle">Title</div>
+      <div class="quantityDiv">Qty</div>
+      <div class="priceDiv">Price</div>
+      <div class="totalDiv">Total</div>
+    </div>
+
+    <div class="productCards" *ngFor="let item of cartItems">
+      <div class="delete">
+        <i class="bi bi-x-lg" (click)="delete(item.id)"></i>
+      </div>
+      <div class="image"><img [src]="item.image" alt="{{item.name}}" width="80" /></div>
+      <div class="title">{{ item.name }}</div>
+      <div class="quantity">
+        <div class="counter">
+          <button (click)="increment(item.id)">+</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="decrement(item.id)">-</button>
+        </div>
+      </div>
+      <div class="price">${{ item.price }}</div>
+      <div class="total">${{ item.price * item.quantity }}</div>
+    </div>
+
+    <div class="cartTotal" style="text-align: right; margin: 20px; font-size: 24px;">
+      Total: ${{ totalPrice }}
+    </div>
+  </div>
+</div>

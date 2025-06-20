@@ -1,0 +1,85 @@
+<div class="mainContainer">
+  <div class="titlePicture">
+    <img src="home.images/salad.png" alt="">
+  </div>
+
+  <div class="categoryTitle">
+    <h1>Categories</h1>
+  </div>
+
+  <div class="categoryButtons">
+    <button (click)="filterByCategory(null)">All</button>
+    <button (click)="filterByCategory(1)">Salad</button>
+    <button (click)="filterByCategory(2)">Soups</button>
+    <button (click)="filterByCategory(3)">Chicken Dishes</button>
+    <button (click)="filterByCategory(4)">Beef Dishes</button>
+    <button (click)="filterByCategory(5)">Seafood Dishes</button>
+    <button (click)="filterByCategory(6)">Vegetable Dishes</button>
+    <button (click)="filterByCategory(7)">Bits & Bites</button>
+    <button (click)="filterByCategory(8)">On The Side</button>
+  </div>
+
+  <div class="cardMainContainer">
+
+    <div class="filterContainer">
+        <div class="filterTitle">Filter</div>
+        <div class="lineFilter">
+          <form>
+            <label for="spiciness">Spiciness: </label>
+            <span>{{ spicinessValue }}</span> <br>
+            <input type="range" id="spiciness" name="spiciness" min="0" max="4" [(ngModel)]="spicinessValue">
+            
+          </form>
+
+        </div>
+        <div class="divCheckbox">
+
+          <form (ngSubmit)="applyFilters()">
+              <div class="boxes">
+                <input type="checkbox" id="nuts" [(ngModel)]="nuts" name="nuts">
+                <label for="nuts">Nuts</label><br>
+                
+                <input type="checkbox" id="vegeterian" [(ngModel)]="vegeterian" name="vegeterian">
+                <label for="vegetarian">Vegetarian</label><br>
+              </div>
+
+              <div class="boxButton">
+                <div class="applyDiv">
+                  <input type="submit" value="Apply">
+                </div>
+                <div class="resetDiv">
+                  <button type="button" (click)="resetFilters()">Reset</button>
+                </div>
+              </div>
+          </form>
+        </div>
+    </div>
+    
+    <div class="cardContainer">
+       <div *ngIf="filteredItems.length === 0" class="noProducts">
+          <h1>There is no product.</h1>
+        </div>
+      <div class="cards" *ngFor="let item of filteredItems">
+        <div class="imageContainer">
+          <img [src]="item.image" [alt]="item.name">
+        </div>
+        <div class="titleContainer">{{ item.name }}</div>
+        <div class="spiceContainer">Spiciness: {{ item.spiciness }}</div>
+        <div class="NutsAndVeg">
+          <div class="circle" [ngClass]="{'active': item.nuts}"></div>
+          <span>Nuts</span>
+          <div class="circle" [ngClass]="{'active': item.vegeterian}"></div>
+          <span>Vegeterian</span>
+        </div>
+
+        <div class="additional">
+          <div class="price">${{ item.price }}</div>
+          <div class="addCart">
+            <button (click)="addToCart(item)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
